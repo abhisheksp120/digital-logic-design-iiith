@@ -1,6 +1,18 @@
-To RUN THE EXPERIMENT RUN THE INDEX.HTML FILE IN THE CODES FOLDER.
-AND THE REQUIRED LIBRARIES ARE INCLUDED FROM CDN.
-I NOT ABLE TO INCLUDE THE LIBRARIES IN MY HTML FILE(IT DOES NOT WORKS).
+To RUN THE EXPERIMENT open THE INDEX.HTML FILE IN THE CODES FOLDER.
+
+
+Some of the libraries are included from cdn and others are in the Libraries folder.
 
 PROGRESS TILL NOW:
-FRONT-END: HALF OF IT IS DONE USING HTML,CSS,BOOTSTRAP.
+
+FRONT-END: Created the structure USING HTML,CSS,BOOTSTRAP.
+
+Grid is also created using Jointjs whose dependecies has been included in the Libraries folder.
+
+I also has given the Example of hello world in the experiment.
+
+I have not included the gates or any other functionality till now.
+
+Hope some of it will be done by the next commit.  
+
+Please give the remark if there something more better i can do.
