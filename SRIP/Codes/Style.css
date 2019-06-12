@@ -1,3 +1,15 @@
+.code {
+  margin: 16px 0px 16px 0px;
+  padding: 4px;
+  border-width: 0px 0px 0px 4px;
+  border-color: #cccccc;
+  border-style: solid;
+  background-color: #f0f0f0;
+  white-space: pre;
+}
+.note {
+  color: #0000ff;
+}
 #test1{
    background-color: #DCDCDC;
   width: 100%;

@@ -3,64 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="../Libraries/joint.css" />
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <link rel="stylesheet" type="text/css" href="../Libraries/simcir.css" />
+    <link rel="stylesheet" type="text/css" href="../Libraries/simcir-basicset.css" />
 </head>
 <body>
-    <script src="../Libraries/lodash.js"></script>
-    <script src="../Libraries/backbone.js"></script>
+    <script src="../Libraries/simcir.js"></script>
+    <script src="../Libraries/simcir-basicset.js"></script>
     <script src="../Libraries/jQuery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="../Libraries/joint.js"></script>
+    <script src="../Libraries/simcir-library.js"></script>
      
-    <div id="test1"class="container-fluid">
+   <div id="test1"class="container-fluid">
         <div class="row">
           <div id="main" class="col-sm-2">
-           <form>
-            <fieldset class="scheduler-border">
-              <legend class="scheduler-border" style="font-size: 15px"><b>Basic Elements</b></legend>
               <div class="form-group">
-                   <div id="shift" >
-                   <select id="company" class="form-control">
-                    <option>AND</option>
-                    <option>OR</option>
-                    <option>NAND</option>
-                    <option>XOR</option>
-                    <option>XNOR</option>
-                    <option>NOT</option>
-                    <option>CONN</option>
-                  </select>
-                </div>
-                <div class="row">
-                <select id="company2" class="form-control"> 
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
-                </div>
+                   <div style="border: 1px solid black; border-color: #696969; height: 80px;">
+                       <button type="button" id="check1" style="font-size: 15px;  width: 80px; margin-top: 10px; position: relative; left: 15px; border-radius: 5px;">Load</button>
+                       <button type="button" id="check1" style="font-size: 15px; width: 80px; position: relative; left: 15px; border-radius: 5px;">Import</button>
+                        <button type="button" id="check1" style="font-size: 15px; width: 80px;position: relative; top: 5px; left: 15px; border-radius: 5px;">Save</button>
+                        <button type="button" id="check1" style="font-size: 15px;width: 80px; position: relative; top: 5px; left: 15px; border-radius: 5px;">clear</button>
+                  </div>
               </div>
-              <button type="button" id="check1" class="btn btn-primary btn-md" style="font-size: 15px">Select</button>
-              <button type="button" id="check2" class="btn btn-primary btn-md" style="font-size: 15px">Probe</button>
-               <button type="button" id="check3" class="btn btn-primary btn-md" style="font-size: 15px">Output</button>
-             <div id="drag">
-                <button type="button" id="check1" class="btn btn-primary btn-md" style="font-size: 15px">None</button>
-                 <button type="button" id="check1" class="btn btn-primary btn-md" style="font-size: 15px">Delete Element</button>
-                  <button type="button" id="check1" class="btn btn-primary btn-md" style="font-size: 15px">Disconnect</button>
-                   <button type="button" id="check1" class="btn btn-primary btn-md" style="font-size: 15px">Connect</button>
-                    <button type="button" id="check1" class="btn btn-primary btn-md" style="font-size: 15px">Naming</button>
-                  </div>
-                  <div id="box">
-                    <p style="text-align: center;">Selected Icon</p>
-                  </div>
-            </fieldset>
-           </form>
            <form>
               <fieldset class="scheduler-border">
               <legend class="scheduler-border" style="font-size: 15px"><b>Inputs</b></legend>
-              <div style="margin-top: 40px;">
-                 <button type="button" id="check2" class="btn btn-primary btn-md" style="font-size: 15px">0</button>
-               <button type="button" id="check3" class="btn btn-primary btn-md" style="font-size: 15px">1</button>
+              <div style="margin-top: 80px;">
               </div>
               <div id="box1" > <textarea type="text" id="textarea" class="md-textarea"></textarea>
               </div>
@@ -81,29 +50,34 @@
             </fieldset>
            </form>
           </div>  
-           <div class="col-sm-9" style="background-color: #DCDCDC; margin-left: -5px; height: 55px; border: 1px groove #ddd; width: 70%;">
-            <button type="button" id="check1" style="font-size: 15px; width: 8%; margin-top: 10px; border-radius: 5px;">Load</button>
-             <button type="button" id="check1" style="font-size: 15px; width: 8%; margin-top: 10px; border-radius: 5px;">Import</button>
-              <button type="button" id="check1" style="font-size: 15px; width: 8%; margin-top: 10px; border-radius: 5px;">Save</button>
-              <button type="button" id="check1" style="font-size: 15px; width: 8%; margin-top: 10px; border-radius: 5px;">clear</button>
-                <button type="button" id="check1" style="font-size: 15px; width: 8%; margin-top: 10px; border-radius: 5px; margin-left: 230px;">Load_it</button>
-                   <select  class="form-control" style="width: 15%; margin-top: -30px; margin-left: 616px; padding: 1px;">
-                    <option >Parallel_shift_reg</option>
-                    <option>4_bit_adder</option>
-                  </select>
-                 <button type="button" id="check1" style="font-size: 15px; width: 8%; position: relative;top: -32px; left:710px;border-radius: 5px; margin-left: 50px;">Import_it</button>
-                  <button type="button" id="check1" style="font-size: 15px; width: 8%; position: relative;top: -59px; border-radius: 5px; margin-left: 838px;">Simulate</button>
-        </div>
-        <div class="row col-sm-9" style="background-color: #DCDCDC; margin-top: 5px; border: solid 2px; margin-left: -5px; width: 70%;">
+        <div class="row col-sm-9" style="background-color: #DCDCDC; margin-top: 0px; border: solid 2px; margin-left: -8px; width: 67%;">
           <p style="padding-top: 7px; text-align: center; font-size: 18px;"><b>Perform multiplication with the help of shift register, 4 bit adder, quad 2 input and gate</b></p>
         </div>
-        <div id="grid" class="row col-sm-9" style="background-color: #DCDCDC; border: 1px solid black; margin-left: -5px; margin-top: 5px;  height: 774px;width: 70%; overflow: scroll;">
+
+        <div class="row col-sm-9" style="border: 1px solid black;margin-left: 220px; margin-top: 85px;  height: 485px;width: 67%; 
+        position: absolute; overflow: auto;">
+          <div class="row col-sm-9 simcir" style="background-color: white; margin-left: -30px; margin-top: 0px;width: 220%;">
+            {
+                 "width":1900,
+                "height":1100
+            }
         </div>
-        <script type="text/javascript" src="Js.js"></script>
-        <div id="ert" style="border: 1px solid black; background-color: white; position:relative;left: 4px; top: 110px; width: 13%; height: 480px; overflow: scroll;">
+      </div>
+      
+        <div style="border: 1px solid black; height: 10px; width: 15%; position: relative; left: 1143px; height: 80px;">
+          <button type="button" id="check1" style="font-size: 15px; position: fixed;top: 10px; left:1154px;width: 80px; border-radius: 5px; top: 30px;">Load_it</button>
+          <select id="company" class="form-control" style="position: fixed;top: 40px; left:1240px; padding-left: 2px;width: 108px;">
+                    <option>parallel_shift_reg</option>
+                    <option>4_bit_adder</option>
+                  </select>
+          <button type="button" id="check1" style="font-size: 15px; position: fixed;top: 65px; left:1154px;width: 80px; border-radius: 5px;">Import_it</button>        
         </div>
 
+        <div style="border: 1px solid black; position:relative;left: 915px; top: 10px; width: 15%; height: 480px; overflow: scroll;">
+           <div id="ert" style="background-color: white; position:relative; left:2px; top: 2px; width: 1000%; height: 930px;">
+        </div>
+        </div>
+        </div>
     </div>
-
 </body>
 </html>

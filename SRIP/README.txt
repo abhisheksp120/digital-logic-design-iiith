@@ -1,18 +1,14 @@
 To RUN THE EXPERIMENT open THE INDEX.HTML FILE IN THE CODES FOLDER.
 
 
-Some of the libraries are included from cdn and others are in the Libraries folder.
+Major changes are made, Removed jointjs libraries and included Simcirjs libraries to implement the experiment.
 
 PROGRESS TILL NOW:
 
-FRONT-END: Created the structure USING HTML,CSS,BOOTSTRAP.
+ALL the logic gates has been included with there functionality.
 
-Grid is also created using Jointjs whose dependecies has been included in the Libraries folder.
+But ,I have to work on the button functionality.
 
-I also has given the Example of hello world in the experiment.
+Major changes has been made on the layout of the experiment.
 
-I have not included the gates or any other functionality till now.
 
-Hope some of it will be done by the next commit.  
-
-Please give the remark if there something more better i can do.
