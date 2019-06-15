@@ -11,20 +11,24 @@
     <script src="../Libraries/simcir.js"></script>
     <script src="../Libraries/simcir-basicset.js"></script>
     <script src="../Libraries/jQuery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="../Libraries/simcir-library.js"></script>
-     
+     <script type="text/javascript" src="Js.js" ></script>
    <div id="test1"class="container-fluid">
         <div class="row">
           <div id="main" class="col-sm-2">
               <div class="form-group">
                    <div style="border: 1px solid black; border-color: #696969; height: 80px;">
-                       <button type="button" id="check1" style="font-size: 15px;  width: 80px; margin-top: 10px; position: relative; left: 15px; border-radius: 5px;">Load</button>
-                       <button type="button" id="check1" style="font-size: 15px; width: 80px; position: relative; left: 15px; border-radius: 5px;">Import</button>
+                       <button type="button" id="check1" onClick="document.getElementById('getFile').click()" class="hell1" style="font-size: 15px;  width: 80px; margin-top: 10px; position: relative; left: 15px; border-radius: 5px;">Load</button>
+                       <input type='file' id="getFile" style="display:none"> 
+                       <button type="button" id="check1" onClick="document.getElementById('getFile1').click()" class="hell2" style="font-size: 15px; width: 80px; position: relative; left: 15px; border-radius: 5px;">Import</button>
+                       <input type='file' id="getFile1" style="display:none"> 
                         <button type="button" id="check1" style="font-size: 15px; width: 80px;position: relative; top: 5px; left: 15px; border-radius: 5px;">Save</button>
-                        <button type="button" id="check1" style="font-size: 15px;width: 80px; position: relative; top: 5px; left: 15px; border-radius: 5px;">clear</button>
+                        <button type="button" onClick="hello4()" class="hell4" id="check1"  style="font-size: 15px;width: 80px; position: relative; top: 5px; left: 15px; border-radius: 5px;">Clear</button>
                   </div>
+                  
               </div>
            <form>
               <fieldset class="scheduler-border">
@@ -56,11 +60,44 @@
 
         <div class="row col-sm-9" style="border: 1px solid black;margin-left: 220px; margin-top: 85px;  height: 485px;width: 67%; 
         position: absolute; overflow: auto;">
-          <div class="row col-sm-9 simcir" style="background-color: white; margin-left: -30px; margin-top: 0px;width: 220%;">
+       
+          <div class="row col-sm-9 simcir" id="hell" style="background-color: white; margin-left: -30px; margin-top: 0px;width: 220%;">
+            
             {
-                 "width":1900,
-                "height":1100
+                  "width":1900,
+                "height":1100,
+              "showToolbox":true,
+               "toolbox":[
+            {"type":"In"},
+               {"type":"Out"},
+            {"type":"DC"},
+                {"type":"LED"},
+           {"type":"PushOn"},
+          {"type":"BUF"},
+            {"type":"NOT"},       
+            {"type":"AND"},
+            {"type":"NAND"},
+            {"type":"OR"},
+            {"type":"NOR"},
+            {"type":"XOR"},
+            {"type":"XNOR"},
+            {"type":"7seg"},
+            {"type":"RS-FF"},
+            {"type":"JK-FF"},
+            {"type":"T-FF"},
+            {"type":"D-FF"},
+            {"type":"8bitCounter"},
+            {"type":"HalfAdder"},
+            {"type":"FullAdder"},
+            {"type":"4bitAdder"}
+  ],
+  
+  "devices":[
+  ],
+  "connectors":[
+  ]
             }
+
         </div>
       </div>
       
@@ -79,5 +116,6 @@
         </div>
         </div>
     </div>
+
 </body>
 </html>
