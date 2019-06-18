@@ -41,7 +41,7 @@
                 <label style="position: relative; top:-40px; left: 5px;">Available Time Pulse :</label>
                 <div style="width:105%; position: relative; top:-40px; left:33px;">
                    <div id="shift" >
-                   <select id="company" class="form-control">
+                   <select id="company1" class="form-control">
                     <option>a</option>
                     <option>b</option>
                     <option>c</option>
@@ -54,15 +54,15 @@
             </fieldset>
            </form>
           </div>  
-        <div class="row col-sm-9" style="background-color: #DCDCDC; margin-top: 0px; border: solid 2px; margin-left: -8px; width: 67%;">
+        <div class="row col-sm-9" style="  background-color: #DCDCDC; margin-top: 0px; border: solid 2px; margin-left: -8px; width: 67%;">
           <p style="padding-top: 7px; text-align: center; font-size: 18px;"><b>Perform multiplication with the help of shift register, 4 bit adder, quad 2 input and gate</b></p>
         </div>
 
-        <div class="row col-sm-9" style="border: 1px solid black;margin-left: 220px; margin-top: 85px;  height: 485px;width: 67%; 
+        <div class="row col-sm-9" id="testt" style="border: 1px solid black;margin-left: 220px; margin-top: 85px;  height: 485px;width: 67%; 
         position: absolute; overflow: auto;">
        
           <div class="row col-sm-9 simcir" id="hell" style="background-color: white; margin-left: -30px; margin-top: 0px;width: 220%;">
-            
+           
             {
                   "width":1900,
                 "height":1100,
@@ -71,6 +71,7 @@
             {"type":"In"},
                {"type":"Out"},
             {"type":"DC"},
+            {"type":"Joint"},
                 {"type":"LED"},
            {"type":"PushOn"},
           {"type":"BUF"},
@@ -81,15 +82,16 @@
             {"type":"NOR"},
             {"type":"XOR"},
             {"type":"XNOR"},
-            {"type":"7seg"},
+            {"type":"4bitAdder"},
+            {"type":"Parallel Shift Reg"},
+            {"type":"Selector"},
             {"type":"RS-FF"},
             {"type":"JK-FF"},
             {"type":"T-FF"},
             {"type":"D-FF"},
-            {"type":"8bitCounter"},
             {"type":"HalfAdder"},
-            {"type":"FullAdder"},
-            {"type":"4bitAdder"}
+            {"type":"FullAdder"}
+           
   ],
   
   "devices":[
@@ -102,14 +104,13 @@
       </div>
       
         <div style="border: 1px solid black; height: 10px; width: 15%; position: relative; left: 1143px; height: 80px;">
-          <button type="button" id="check1" style="font-size: 15px; position: fixed;top: 10px; left:1154px;width: 80px; border-radius: 5px; top: 30px;">Load_it</button>
-          <select id="company" class="form-control" style="position: fixed;top: 40px; left:1240px; padding-left: 2px;width: 108px;">
-                    <option>parallel_shift_reg</option>
-                    <option>4_bit_adder</option>
-                  </select>
-          <button type="button" id="check1" style="font-size: 15px; position: fixed;top: 65px; left:1154px;width: 80px; border-radius: 5px;">Import_it</button>        
+          <button type="button" id="check1" class="qw" style="font-size: 15px; position: fixed;top: 45px; left:1150px;width: 80px; border-radius: 5px; ">Load_it</button>
+          <select id="company" class="form-control" onchange="change();" style="position: fixed;top: 40px; left:1232px; padding-left: 2px;width: 119px;">
+                    <option disabled selected value>Select option</option>
+                    <option value="1">parallel_shift_reg</option>
+                    <option value="2">4_bit_adder</option>
+                  </select>  
         </div>
-
         <div style="border: 1px solid black; position:relative;left: 915px; top: 10px; width: 15%; height: 480px; overflow: scroll;">
            <div id="ert" style="background-color: white; position:relative; left:2px; top: 2px; width: 1000%; height: 930px;">
         </div>
