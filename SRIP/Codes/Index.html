@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Style.css">
     <link rel="stylesheet" type="text/css" href="../Libraries/simcir.css" />
     <link rel="stylesheet" type="text/css" href="../Libraries/simcir-basicset.css" />
+    <title>Multipliers</title>
 </head>
-<body>
+<body style= "background-image: url(Images/Bg.jpg);  background-size: 1500px 1000px; width: 99%;">
     <script src="../Libraries/simcir.js"></script>
     <script src="../Libraries/simcir-basicset.js"></script>
     <script src="../Libraries/jQuery.js"></script>
+    <script type="text/javascript" src="../Libraries/simcir-dso.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -19,61 +21,122 @@
    <div id="test1"class="container-fluid">
         <div class="row">
           <div id="main" class="col-sm-2">
+             <img src="Images/logo.jpg" height="100px;" style="opacity: 1;">
               <div class="form-group">
-                   <div style="border: 1px solid black; border-color: #696969; height: 80px;">
-                       <button type="button" id="check1" onClick="document.getElementById('getFile').click()" class="hell1" style="font-size: 15px;  width: 80px; margin-top: 10px; position: relative; left: 15px; border-radius: 5px;">Load</button>
-                       <input type='file' id="getFile" style="display:none"> 
-                       <button type="button" id="check1" onClick="document.getElementById('getFile1').click()" class="hell2" style="font-size: 15px; width: 80px; position: relative; left: 15px; border-radius: 5px;">Import</button>
-                       <input type='file' id="getFile1" style="display:none"> 
-                        <button type="button" id="check1" style="font-size: 15px; width: 80px;position: relative; top: 5px; left: 15px; border-radius: 5px;">Save</button>
-                        <button type="button" onClick="hello4()" class="hell4" id="check1"  style="font-size: 15px;width: 80px; position: relative; top: 5px; left: 15px; border-radius: 5px;">Clear</button>
-                  </div>
-                  
+                   <div style="border: 2px solid black; border-radius: 5px; position: relative;top: 85px; height: 160px; width: 166px;">
+                    <button type="button" id="check1" data-toggle="modal" data-target="#exampleModal" style=" font-size: 15px;width: 80px; position: relative; top: 10px; left: 27px; border-radius: 5px; width: 70%;">Instructions</button>
+                        <button type="button" onClick="hello4()" class="hell4" id="check1"  style=" font-size: 15px;width: 80px; position: relative; top: 20px; left: 43px; border-radius: 5px;">Clear</button>
+                        <button type="button" id="check1" class="qw" style="font-size: 15px; position: relative;top: 30px; left:43px;width: 80px; border-radius: 5px; ">Load_it</button>
+                          <select id="company" class="form-control" onchange="change();" style="position: relative;top: 35px; left:22px; padding-left: 2px;width: 119px;">
+                                 <option disabled selected value>Select option</option>
+                                  <option value="1">parallel_shift_reg</option>
+                                  <option value="2">4_bit_adder</option>
+                           </select>  
+                     </div> 
               </div>
-           <form>
-              <fieldset class="scheduler-border">
-              <legend class="scheduler-border" style="font-size: 15px"><b>Inputs</b></legend>
-              <div style="margin-top: 80px;">
-              </div>
-              <div id="box1" > <textarea type="text" id="textarea" class="md-textarea"></textarea>
-              </div>
-                <button type="button" id="check1" style="margin-top: 50px;" class="btn btn-primary btn-md" style="font-size: 15px">New Time Pulse</button>
-                <label style="position: relative; top:-40px; left: 5px;">Available Time Pulse :</label>
-                <div style="width:105%; position: relative; top:-40px; left:33px;">
-                   <div id="shift" >
-                   <select id="company1" class="form-control">
-                    <option>a</option>
-                    <option>b</option>
-                    <option>c</option>
-                    <option>d</option>
-                  </select>
-                </div>
-                <label style="position: relative; top:5px; left: -28px;">Selected Time Pulse :</label>
-                <button type="button" id="check1" class="btn btn-primary btn-md" style="font-size: 15px; margin-top: 50px;margin-bottom: -90px; margin-left: -30px; width: 100%;">None</button>
-                </div>
-            </fieldset>
-           </form>
           </div>  
-        <div class="row col-sm-9" style="  background-color: #DCDCDC; margin-top: 0px; border: solid 2px; margin-left: -8px; width: 67%;">
-          <p style="padding-top: 7px; text-align: center; font-size: 18px;"><b>Perform multiplication with the help of shift register, 4 bit adder, quad 2 input and gate</b></p>
+    <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="position: relative; top: 10px; text-align: center; font-size: 25px;" class="modal-title" id="exampleModalLongTitle"><b>Multiplers</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <p style="font-size: 18px; text-align: center;"><br  >Welcome to Virtual lab,An MHRD Govt of India Initiative.</br>The main Objective of this experiment is design and simulate a circuit for the 4 bit multiplication.To Construct a 4 bit Multiplers,the component required are :
+        <li style="font-size: 18px; text-align: center;">Parallel shift register.</li>
+        <li style="font-size: 18px; text-align: center;">4 bit adder.</li>
+        <li style="font-size: 18px;text-align: center;">Quad(4) 2 input And gate.</li>
+      </p>
+        <p style="font-size: 18px;">Following instruction help you build the circuit.</p>
+        <hr>
+          <p style="font-size: 18px;">
+           <br>The right side consist of circuit board and Left side consists the input panel.</br>
+           <li><strong>Circuit Board</strong></li>
+           <ol>
+             <li>
+              <p>The toolbox on the left contains the pre-made logic circuits you will require to build a 4 bit multiplier.</p>
+            </li>
+             <li>
+                  <p>Drag them on the right, to place them on your breadboard.</p>
+                </li>
+                <li>
+                  <p>The left part of the abstracted circuit contains the inputs, and the right side the outputs.</p>
+                </li>
+                <li>
+                  <p>Click on the circle of the input or output to another input/output to make a connection.</p>
+                </li>
+                <li>
+                  <p>The "DC" icon outputs digital 1 at all times, connnect it to:</p>
+                  <ul>
+                    <li>
+                      <p>push on: To simulate the 1 only when you're pressing on the button.</p>
+                    </li>
+                    <li>
+                      <p>push off: To simulate 0 when you're pushing the button.</p>
+                    </li>
+                    <li>
+                      <p>Toggle: To toggle the output between 1 and 0.</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>The OSC supplies 1 and 0 at frequency 1 Hz.</p>
+                </li>
+                <li>
+                  <p>The joint icon is just a connection, to make your connections look neater, as the lines from an output to an input are straight.</p>
+                </li>
+                <li>
+                  <p>The DSO displays the output in a graph format for easy verification. It has default 6 inputs.</p>
+                </li>
+              </ol>
+              <li><strong>Input panel</strong></li>
+              <ol>
+                <li>
+                  <p>Instruction button is the helping hand to simulate the experiment.<p>
+                </li>
+                <li>
+                  <p>Clear button to clear the circuit board.<p>
+                  </li>
+                <li>
+                  <p>Load_it button loads the circuit which is selected from the dropdown.<p>
+                  </li>
+                  <li>
+                    <p>
+                      If your are facing issue creating the circuit please go through thoery section or try using the inbuild components to build the circuit.
+                    </p>
+                  </li>
+              </ol>
+          </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" style="width: 10%; position: relative; top: -2px;" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="row col-sm-9" style=" margin-top: 0px; border: solid 2px; margin-left: 30px; width: 67%; border-radius: 5px; height: 60px;">
+          <p style="padding-top: 14px; text-align: center; font-size: 18px;"><b>Perform multiplication with the help of shift register, 4 bit adder, quad 2 input And gate</b></p>
         </div>
-
-        <div class="row col-sm-9" id="testt" style="border: 1px solid black;margin-left: 220px; margin-top: 85px;  height: 485px;width: 67%; 
-        position: absolute; overflow: auto;">
-       
-          <div class="row col-sm-9 simcir" id="hell" style="background-color: white; margin-left: -30px; margin-top: 0px;width: 220%;">
+        <div class="row col-sm-9 simcir_outer_div" id="testt" style="border: 1px solid black;margin-left: 200px; margin-top: 100px;  height: 485px;width: 75%; border-radius: 5px; position: absolute; overflow: auto;">
+          <div class="row col-sm-9 simcir" id="hell" style="background-color: white; border-radius: 5px; margin-left: -30px; margin-top: 0px;width: 220%;">
            
             {
-                  "width":1900,
+                  "width":2132,
                 "height":1100,
               "showToolbox":true,
                "toolbox":[
             {"type":"In"},
                {"type":"Out"},
             {"type":"DC"},
+            {"type":"OSC","freq":1},
             {"type":"Joint"},
                 {"type":"LED"},
            {"type":"PushOn"},
+           {"type":"PushOff"},
+           {"type":"Toggle"},
           {"type":"BUF"},
             {"type":"NOT"},       
             {"type":"AND"},
@@ -84,6 +147,7 @@
             {"type":"XNOR"},
             {"type":"4bitAdder"},
             {"type":"Parallel Shift Reg"},
+            {"type":"DSO","numInputs":6},
             {"type":"Selector"},
             {"type":"RS-FF"},
             {"type":"JK-FF"},
@@ -93,30 +157,14 @@
             {"type":"FullAdder"}
            
   ],
-  
   "devices":[
   ],
   "connectors":[
   ]
             }
-
         </div>
-      </div>
-      
-        <div style="border: 1px solid black; height: 10px; width: 15%; position: relative; left: 1143px; height: 80px;">
-          <button type="button" id="check1" class="qw" style="font-size: 15px; position: fixed;top: 45px; left:1150px;width: 80px; border-radius: 5px; ">Load_it</button>
-          <select id="company" class="form-control" onchange="change();" style="position: fixed;top: 40px; left:1232px; padding-left: 2px;width: 119px;">
-                    <option disabled selected value>Select option</option>
-                    <option value="1">parallel_shift_reg</option>
-                    <option value="2">4_bit_adder</option>
-                  </select>  
-        </div>
-        <div style="border: 1px solid black; position:relative;left: 915px; top: 10px; width: 15%; height: 480px; overflow: scroll;">
-           <div id="ert" style="background-color: white; position:relative; left:2px; top: 2px; width: 1000%; height: 930px;">
-        </div>
-        </div>
-        </div>
+      </div>    
+     </div>
     </div>
-
 </body>
 </html>

@@ -1,26 +1,4 @@
-//
-// SimcirJS - library
-//
-// Copyright (c) 2014 Kazuhiko Arase
-//
-// URL: http://www.d-project.com/
-//
-// Licensed under the MIT license:
-//  http://www.opensource.org/licenses/mit-license.php
-//
 
-// includes following device types:
-//  RS-FF
-//  JK-FF
-//  T-FF
-//  D-FF
-//  8bitCounter
-//  HalfAdder
-//  FullAdder
-//  4bitAdder
-//  2to4BinaryDecoder
-//  3to8BinaryDecoder
-//  4to16BinaryDecoder
 simcir.registerDevice('Parallel Shift Reg',
 {
   "width":620,

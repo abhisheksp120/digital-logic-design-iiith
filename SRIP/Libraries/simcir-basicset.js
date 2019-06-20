@@ -1,35 +1,3 @@
-//
-// SimcirJS - basicset
-//
-// Copyright (c) 2014 Kazuhiko Arase
-//
-// URL: http://www.d-project.com/
-//
-// Licensed under the MIT license:
-//  http://www.opensource.org/licenses/mit-license.php
-//
-
-// includes following device types:
-//  DC
-//  LED
-//  PushOff
-//  PushOn
-//  Toggle
-//  BUF
-//  NOT
-//  AND
-//  NAND
-//  OR
-//  NOR
-//  EOR
-//  ENOR
-//  OSC
-//  7seg
-//  16seg
-//  4bit7seg
-//  RotaryEncoder
-//  BusIn
-//  BusOut
 
 !function($s) {
 
@@ -731,7 +699,7 @@
   $s.registerDevice('ENOR', createLogicGateFactory(EOR, NOT, drawENOR), true);
 
   // register Oscillator
- /* $s.registerDevice('OSC', function(device) {
+  $s.registerDevice('OSC', function(device) {
     var freq = device.deviceDef.freq || 10;
     var delay = ~~(500 / freq);
     var out1 = device.addOutput();
@@ -762,7 +730,7 @@
       };
     };
   });
-*/
+
   // register LED seg
   $s.registerDevice('7seg', createLEDSegFactory(_7Seg) );
  $s.registerDevice('16seg', createLEDSegFactory(_16Seg) );
