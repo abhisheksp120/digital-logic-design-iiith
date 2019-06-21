@@ -7,6 +7,12 @@
   height:100px;
   opacity: 1;
 }
+#div{
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  margin: 5px;
+}
 #div1{
   border: 2px solid black; 
   border-radius: 5px; 
@@ -16,14 +22,16 @@
   width: 166px;
 }
 #div2{
-  margin-top: 0px; 
+  display: inline-block;
+  
   border: solid 2px; 
-  margin-left: 30px; 
+  margin-left: 48px; 
   width: 67%; 
   border-radius: 5px; 
   height: 60px;
 }
 #div3{
+
   border: 1px solid black;
   margin-left: 200px; 
   margin-top: 100px;  
@@ -34,6 +42,7 @@
   overflow: auto;
 }
 #div4{
+display: inline-block;
   background-color: white;
   border-radius: 5px; 
   margin-left: -30px; 
@@ -70,11 +79,6 @@
   position: relative; 
   top: -2px;
 }
-#test1{
-  width: 100%;
-  padding: 15px;
-  margin: 5px;
-}
 #sel{
   border-color: #696969;
   position: relative;
@@ -101,6 +105,9 @@
   padding-top: 14px; 
   text-align: center; 
   font-size: 18px;
+}
+#p3{
+  font-size: 16px;
 }
 .btn {
   background-color: #C0C0C0; 
@@ -131,4 +138,19 @@
   background-color: white; 
   margin-left: -30px; 
   margin-top: 0px;
+}
+@media screen and (max-width: 780px) {
+  #div2 {
+    position: relative;
+    margin-left: 20px;
+    left: 200px;
+    width: 50%;
+    height: 150px;
+   
+  }
+  #div3{
+    position: absolute;
+    left: -150px;
+    top: 350px;
+  }
 }
