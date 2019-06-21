@@ -1,20 +1,7 @@
-//
-// SimcirJS - DSO
-//
-// Copyright (c) 2016 Kazuhiko Arase
-//
-// URL: http://www.d-project.com/
-//
-// Licensed under the MIT license:
-//  http://www.opensource.org/licenses/mit-license.php
-//
-
-// includes following device types:
-//  DSO
 
 !function($s) {
 
-  'use strict';
+  "use strict";
 
   var $ = $s.$;
 
@@ -24,12 +11,12 @@
   var createDSOFactory = function() {
 
     var colors = [
-      '#ff00cc',
-      '#ffcc00',
-      '#ccff00',
-      '#00ffcc',
-      '#00ccff',
-      '#cc00ff'
+      "#ff00cc",
+      "#ffcc00",
+      "#ccff00",
+      "#00ffcc",
+      "#00ccff",
+      "#cc00ff"
     ];
     var timeRanges = [10000, 5000, 2000, 1000];
     var maxTimeRange = timeRanges[0];
@@ -43,11 +30,11 @@
         timeRange : maxTimeRange
       };
 
-      var $path = $s.createSVGElement('path').
-        css('fill', 'none').
-        css('stroke-width', 1).
-        css('stroke-linejoin', 'bevel').
-        css('stroke', color);
+      var $path = $s.createSVGElement("path").
+        css("fill", "none").
+        css("stroke-width", 1).
+        css("stroke-linejoin", "bevel").
+        css("stroke", color);
 
       var setValueRange = function(valueRange) {
         model.valueRange = valueRange;
@@ -67,7 +54,7 @@
               samples[i + 1].value === val) {
             continue;
           }
-          if (typeof val != 'number') {
+          if (typeof val != "number") {
             val = 0;
           }
           var sx = x + width - (ts - samples[i].ts) / model.timeRange * width;
@@ -99,48 +86,48 @@
 
     var createPanel = function() {
 
-      var $lcd = $s.createSVGElement('path').
-        css('stroke', 'none').css('fill', '#ffcc00');
+      var $lcd = $s.createSVGElement("path").
+        css("stroke", "none").css("fill", "#ffcc00");
       var setLCDText = function(text) {
         $lcd.attr('d', createFontPath(text, 4, 4, 1) );
       };
       var $lcdPanel = $s.createSVGElement('g').
-        append($s.createSVGElement('rect').
-          css('stroke', 'none').
-          css('fill', '#000000').
+        append($s.createSVGElement("rect").
+          css("stroke", "none").
+          css("fill", "#000000").
           attr({x : 0, y : 0, width: unit * 7, height : unit}) ).
         append($lcd).
-        on('mousedown', function(event) {
+        on("mousedown", function(event) {
           event.preventDefault();
           event.stopPropagation();
-          $panel.trigger('timeRangeDown');
+          $panel.trigger("timeRangeDown");
         });
       $s.transform($lcdPanel, unit * 1.5, 0);
 
-      var $playing = $s.createSVGElement('path').
+      var $playing = $s.createSVGElement("path").
         attr('d', 'M' + unit / 4 + ' ' + unit / 4 +
             'L' + unit / 4 * 3 + ' ' + unit / 2 +
             'L' + unit / 4 + ' ' + unit / 4 * 3 + 'Z').
-        css('stroke-width', 1);
+        css("stroke-width", 1);
       var btnAttr = {x : 0, y : 0, width : unit, height : unit,
           rx : 1, ry : 1};
-      var $btnRect = $s.createSVGElement('rect').
+      var $btnRect = $s.createSVGElement("rect").
         attr(btnAttr).
-        css('stroke', 'none').
-        css('fill', '#999999').
-        css('opacity', 0);
+        css("stroke", "none").
+        css("fill", "#999999").
+        css("opacity", 0);
       var $btn = $s.createSVGElement('g').
         append($btnRect).
-        append($s.createSVGElement('rect').
+        append($s.createSVGElement("rect").
             attr(btnAttr).
-            css('stroke-width', 1).
-            css('stroke', '#666666').
-            css('fill', 'none') ).
+            css("stroke-width", 1).
+            css("stroke", "#666666").
+            css("fill", "none") ).
         append($playing).
-        on('mousedown', function(event) {
+        on("mousedown", function(event) {
           event.preventDefault();
           event.stopPropagation();
-          $panel.trigger('playDown');
+          $panel.trigger("playDown");
         });
 
       var $panel = $s.createSVGElement('g').
@@ -149,16 +136,16 @@
       return {
         $ui : $panel,
         setPlaying : function(playing) {
-          $playing.css('fill', playing? '#00ff00' : '#006600').
-            css('stroke', playing? '#00cc00' : '#003300');
+          $playing.css('fill', playing? "#00ff00" : "#006600").
+            css('stroke', playing? "#00cc00" : "#003300");
         },
         setTimeRange : function(timeRange) {
-          var unit = 'ms';
+          var unit = "ms";
           if (timeRange > 5000) {
             unit = 's';
             timeRange /= 1000;
           }
-          setLCDText('TimeRange:' + timeRange + unit);
+          setLCDText("TimeRange:" + timeRange + unit);
         }
       };
     };
@@ -193,8 +180,8 @@
         device.$ui.append($display);
         $s.transform($display, unit / 2, unit / 2);
 
-        var $rect = $s.createSVGElement('rect').
-          css('stroke', 'none').css('fill', '#000000').
+        var $rect = $s.createSVGElement("rect").
+          css("stroke", "none").css("fill", "#000000").
           attr({x: 0, y: 0, width: unit * 3,
             height: unit * numInputs * scale });
         $display.append($rect);
@@ -217,14 +204,14 @@
         };
 
         var panel = createPanel();
-        panel.$ui.on('playDown', function(event){
+        panel.$ui.on("playDown", function(event){
             state.playing = !state.playing;
             panel.setPlaying(state.playing);
-          }).on('timeRangeDown', function(event) {
+          }).on("timeRangeDown", function(event) {
             state.rangeIndex = (state.rangeIndex + 1) % timeRanges.length;
             setTimeRange(timeRanges[state.rangeIndex]);
           });
-        device.$ui.append(panel.$ui.css('display', 'none') );
+        device.$ui.append(panel.$ui.css("display", "none") );
         $s.transform(panel.$ui, unit / 2,
             unit * numInputs * scale + unit / 4 * 3);
 
@@ -245,27 +232,27 @@
           }
         };
 
-        device.$ui.on('deviceAdd', function() {
+        device.$ui.on("deviceAdd", function() {
 
-          device.$ui.children('.simcir-device-body').
-            attr('width', unit * 16);
-          device.$ui.children('.simcir-device-label').
+          device.$ui.children(".simcir-device-body").
+            attr("width", unit * 16);
+          device.$ui.children(".simcir-device-label").
             attr('x', unit * 8);
-          $rect.attr('width', unit * 15);
-          panel.$ui.css('display', '');
+          $rect.attr("width", unit * 15);
+          panel.$ui.css("display", '');
 
           alive = true;
           window.requestAnimationFrame(render);
 
-        }).on('deviceRemove', function() {
+        }).on("deviceRemove", function() {
           alive = false;
         });
 
         device.doc = {
           params: [
-            {name: 'numInputs', type: 'number',
+            {name: "numInputs", type: "number",
               defaultValue: 4,
-              description: 'number of inputs.'}
+              description: "number of inputs."}
           ],
           code: '{"type":"' + device.deviceDef.type + '","numInputs":4}'
         };

@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../Style.css">
-    <link rel="stylesheet" type="text/css" href="../../Libraries/simcir.css" />
-    <link rel="stylesheet" type="text/css" href="../../Libraries/simcir-basicset.css" />
      
 </head>
 <body>
-    <script src="../../Libraries/simcir.js"></script>
-    <script src="../../Libraries/simcir-basicset.js"></script>
-    <script src="../../Libraries/jQuery.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="../../Libraries/simcir.css" >
+     <link rel="stylesheet" type="text/css" href="../../Libraries/simcir-basicset.css" >
+    <script type="text/javascript" src="../../Libraries/simcir.js"></script>
+    <script type="text/javascript" src="../../Libraries/simcir-basicset.js"></script>
+    <script type="text/javascript" src="../../Libraries/simcir-library.js"></script>
     <script type="text/javascript" src="../../Libraries/simcir-dso.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="../../Libraries/simcir-library.js"></script>
-     <script type="text/javascript" src="../Js.js" ></script>
-       
-    <div class="row col-sm-9 simcir" id="hell" style="background-color: white; margin-left: -30px; margin-top: 0px;">
+   <script type="text/javascript" src="../Js.js"></script>
+
+    <div class="row col-sm-9 simcir" id="cir">
            
-            {
-                  "width":2405,
-                "height":1005,
-             "showToolbox":true,
-               "toolbox":[
+     {
+            "width":2406,
+            "height":995,
+            "showToolbox":true,
+            "toolbox":[
             {"type":"In"},
-               {"type":"Out"},
+            {"type":"Out"},
             {"type":"DC"},
             {"type":"OSC","freq":1},
             {"type":"Joint"},
-                {"type":"LED"},
-           {"type":"PushOn"},
-           {"type":"PushOff"},
-           {"type":"Toggle"},
-          {"type":"BUF"},
+            {"type":"LED"},
+            {"type":"PushOn"},
+            {"type":"PushOff"},
+            {"type":"Toggle"},
+            {"type":"BUF"},
             {"type":"NOT"},       
             {"type":"AND"},
             {"type":"NAND"},
@@ -45,7 +46,7 @@
             {"type":"XNOR"},
             {"type":"4bitAdder"},
             {"type":"Parallel Shift Reg"},
-           {"type":"DSO","numInputs":6},
+            {"type":"DSO","numInputs":6},
             {"type":"Selector"},
             {"type":"RS-FF"},
             {"type":"JK-FF"},
@@ -55,9 +56,8 @@
             {"type":"FullAdder"}
            
   ],
-  
   "devices":[
- {"type":"In","id":"dev0","x":112,"y":24,"label":"J"},
+    {"type":"In","id":"dev0","x":112,"y":24,"label":"J"},
     {"type":"Selector","id":"dev1","x":208,"y":32,"label":"Selector"},
     {"type":"JK-FF","id":"dev2","x":392,"y":48,"label":"JK-FF"},
     {"type":"NOT","id":"dev3","x":312,"y":80,"label":"NOT"},
@@ -114,7 +114,7 @@
     {"type":"Joint","id":"dev54","x":184,"y":64,"label":"Joint","state":{"direction":0}}
   ],
   "connectors":[
-   {"from":"dev1.in0","to":"dev0.out0"},
+    {"from":"dev1.in0","to":"dev0.out0"},
     {"from":"dev1.in1","to":"dev30.out0"},
     {"from":"dev1.in2","to":"dev54.out0"},
     {"from":"dev2.in0","to":"dev1.out0"},
@@ -175,8 +175,7 @@
     {"from":"dev53.in0","to":"dev12.out0"},
     {"from":"dev54.in0","to":"dev53.out0"}
   ]
-            }
-
+ }
         </div>
 </body>
 </html>

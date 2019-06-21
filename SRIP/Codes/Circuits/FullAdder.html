@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../Style.css">
-    <link rel="stylesheet" type="text/css" href="../../Libraries/simcir.css" />
-    <link rel="stylesheet" type="text/css" href="../../Libraries/simcir-basicset.css" />
      
 </head>
 <body>
-    <script src="../../Libraries/simcir.js"></script>
-    <script src="../../Libraries/simcir-basicset.js"></script>
-    <script src="../../Libraries/jQuery.js"></script>
-      <script type="text/javascript" src="../../Libraries/simcir-dso.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="../../Libraries/simcir.css" >
+     <link rel="stylesheet" type="text/css" href="../../Libraries/simcir-basicset.css" >
+    <script type="text/javascript" src="../../Libraries/simcir.js"></script>
+    <script type="text/javascript" src="../../Libraries/simcir-basicset.js"></script>
+    <script type="text/javascript" src="../../Libraries/simcir-library.js"></script>
+    <script type="text/javascript" src="../../Libraries/simcir-dso.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="../../Libraries/simcir-library.js"></script>
-     <script type="text/javascript" src="../Js.js" ></script>
+   <script type="text/javascript" src="../Js.js"></script>
        
-     <div class="row col-sm-9 simcir" id="hell" style="background-color: white; margin-left: -30px; margin-top: 0px;">
-           
-            {
-                  "width":2400,
-                "height":1000,
-             "showToolbox":true,
-               "toolbox":[
+    <div class="row col-sm-9 simcir" id="cir">
+        {
+            "width":2406,
+            "height":995,
+            "showToolbox":true,
+            "toolbox":[
             {"type":"In"},
-               {"type":"Out"},
+            {"type":"Out"},
             {"type":"DC"},
             {"type":"OSC","freq":1},
             {"type":"Joint"},
-                {"type":"LED"},
-           {"type":"PushOn"},
-           {"type":"PushOff"},
-           {"type":"Toggle"},
-          {"type":"BUF"},
+            {"type":"LED"},
+            {"type":"PushOn"},
+            {"type":"PushOff"},
+            {"type":"Toggle"},
+            {"type":"BUF"},
             {"type":"NOT"},       
             {"type":"AND"},
             {"type":"NAND"},
@@ -55,7 +55,6 @@
             {"type":"FullAdder"}
            
   ],
-  
   "devices":[
    {"type":"In","id":"dev0","x":240,"y":24,"label":"A0"},
     {"type":"In","id":"dev1","x":240,"y":320,"label":"B2"},
@@ -120,8 +119,7 @@
     {"from":"dev30.in0","to":"dev28.out0"},
     {"from":"dev31.in0","to":"dev30.out0"}
   ]
-            }
-
+}
         </div>
 </body>
 </html>

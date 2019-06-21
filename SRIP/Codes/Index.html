@@ -1,33 +1,28 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Style.css">
-    <link rel="stylesheet" type="text/css" href="../Libraries/simcir.css" />
-    <link rel="stylesheet" type="text/css" href="../Libraries/simcir-basicset.css" />
-    <title>Multipliers</title>
+     <title>Multipliers</title>
 </head>
-<body style= "background-image: url(Images/Bg.jpg);  background-size: 1500px 1000px; width: 99%;">
-    <script src="../Libraries/simcir.js"></script>
-    <script src="../Libraries/simcir-basicset.js"></script>
-    <script src="../Libraries/jQuery.js"></script>
-    <script type="text/javascript" src="../Libraries/simcir-dso.js"></script>
+<body id="Bd" >
+  <link rel="stylesheet" type="text/css" href="../Libraries/simcir.css" >
+     <link rel="stylesheet" type="text/css" href="../Libraries/simcir-basicset.css" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="../Libraries/simcir-library.js"></script>
-     <script type="text/javascript" src="Js.js" ></script>
-   <div id="test1"class="container-fluid">
+    <div id="test1"class="container-fluid">
         <div class="row">
           <div id="main" class="col-sm-2">
-             <img src="Images/logo.jpg" height="100px;" style="opacity: 1;">
+             <img src="Images/logo.jpg" id="img">
               <div class="form-group">
-                   <div style="border: 2px solid black; border-radius: 5px; position: relative;top: 85px; height: 160px; width: 166px;">
-                    <button type="button" id="check1" data-toggle="modal" data-target="#exampleModal" style=" font-size: 15px;width: 80px; position: relative; top: 10px; left: 27px; border-radius: 5px; width: 70%;">Instructions</button>
-                        <button type="button" onClick="hello4()" class="hell4" id="check1"  style=" font-size: 15px;width: 80px; position: relative; top: 20px; left: 43px; border-radius: 5px;">Clear</button>
-                        <button type="button" id="check1" class="qw" style="font-size: 15px; position: relative;top: 30px; left:43px;width: 80px; border-radius: 5px; ">Load_it</button>
-                          <select id="company" class="form-control" onchange="change();" style="position: relative;top: 35px; left:22px; padding-left: 2px;width: 119px;">
+                   <div id="div1">
+                    <button type="button" class="button1" id="property" data-toggle="modal" data-target="#exampleModal">Instructions</button>
+                        <button type="button" onClick="hello4()" class="button2" id="property">Clear</button>
+                        <button type="button" id="property" class="button3">Load_it</button>
+                          <select id="sel" class="form-control" onchange="change();">
                                  <option disabled selected value>Select option</option>
                                   <option value="1">parallel_shift_reg</option>
                                   <option value="2">4_bit_adder</option>
@@ -39,22 +34,22 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="position: relative; top: 10px; text-align: center; font-size: 25px;" class="modal-title" id="exampleModalLongTitle"><b>Multiplers</b></h5>
+        <h5 id="h1" class="modal-title" id="exampleModalLongTitle"><b>Multiplers</b></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-       <p style="font-size: 18px; text-align: center;"><br  >Welcome to Virtual lab,An MHRD Govt of India Initiative.</br>The main Objective of this experiment is design and simulate a circuit for the 4 bit multiplication.To Construct a 4 bit Multiplers,the component required are :
-        <li style="font-size: 18px; text-align: center;">Parallel shift register.</li>
-        <li style="font-size: 18px; text-align: center;">4 bit adder.</li>
-        <li style="font-size: 18px;text-align: center;">Quad(4) 2 input And gate.</li>
+       <p id="p"><br  >Welcome to Virtual lab,An MHRD Govt of India Initiative.</br>The main Objective of this experiment is design and simulate a circuit for the 4 bit multiplication.To Construct a 4 bit Multiplers,the component required are :
+        <li id="p">Parallel shift register.</li>
+        <li id="p">4 bit adder.</li>
+        <li id="p">Quad(4) 2 input And gate.</li>
       </p>
-        <p style="font-size: 18px;">Following instruction help you build the circuit.</p>
+        <p id="p1">Following instruction help you build the circuit.</p>
         <hr>
-          <p style="font-size: 18px;">
+          <p id="p1">
            <br>The right side consist of circuit board and Left side consists the input panel.</br>
-           <li><strong>Circuit Board</strong></li>
+           <li>Circuit Board</li>
            <ol>
              <li>
               <p>The toolbox on the left contains the pre-made logic circuits you will require to build a 4 bit multiplier.</p>
@@ -92,7 +87,7 @@
                   <p>The DSO displays the output in a graph format for easy verification. It has default 6 inputs.</p>
                 </li>
               </ol>
-              <li><strong>Input panel</strong></li>
+              <li>Input panel</li>
               <ol>
                 <li>
                   <p>Instruction button is the helping hand to simulate the experiment.<p>
@@ -112,32 +107,32 @@
           </p>
       </div>
       <div class="modal-footer">
-        <button type="button" style="width: 10%; position: relative; top: -2px;" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="button4" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-        <div class="row col-sm-9" style=" margin-top: 0px; border: solid 2px; margin-left: 30px; width: 67%; border-radius: 5px; height: 60px;">
-          <p style="padding-top: 14px; text-align: center; font-size: 18px;"><b>Perform multiplication with the help of shift register, 4 bit adder, quad 2 input And gate</b></p>
+        <div class="row col-sm-9" id="div2">
+          <p id="p2"><b>Perform multiplication with the help of shift register, 4 bit adder, quad 2 input And gate</b></p>
         </div>
-        <div class="row col-sm-9 simcir_outer_div" id="testt" style="border: 1px solid black;margin-left: 200px; margin-top: 100px;  height: 485px;width: 75%; border-radius: 5px; position: absolute; overflow: auto;">
-          <div class="row col-sm-9 simcir" id="hell" style="background-color: white; border-radius: 5px; margin-left: -30px; margin-top: 0px;width: 220%;">
+        <div class="row col-sm-9 simcir_outer_div" id="div3" >
+          <div class="row col-sm-9 simcir" id="div4" >
            
-            {
-                  "width":2132,
-                "height":1100,
-              "showToolbox":true,
-               "toolbox":[
+          {
+            "width":2132,
+            "height":1100,
+            "showToolbox":true,
+            "toolbox":[
             {"type":"In"},
-               {"type":"Out"},
+            {"type":"Out"},
             {"type":"DC"},
             {"type":"OSC","freq":1},
             {"type":"Joint"},
-                {"type":"LED"},
-           {"type":"PushOn"},
-           {"type":"PushOff"},
-           {"type":"Toggle"},
-          {"type":"BUF"},
+            {"type":"LED"},
+            {"type":"PushOn"},
+            {"type":"PushOff"},
+            {"type":"Toggle"},
+            {"type":"BUF"},
             {"type":"NOT"},       
             {"type":"AND"},
             {"type":"NAND"},
@@ -156,15 +151,21 @@
             {"type":"HalfAdder"},
             {"type":"FullAdder"}
            
-  ],
-  "devices":[
-  ],
-  "connectors":[
-  ]
-            }
+            ],
+            "devices":[
+            ],
+            "connectors":[
+            ]
+          }
         </div>
       </div>    
      </div>
     </div>
+    <script type="text/javascript" src="Js.js"></script>
+    <script type="text/javascript" src="../Libraries/simcir.js"></script>
+    <script type="text/javascript" src="../Libraries/simcir-basicset.js"></script>
+    <script type="text/javascript" src="../Libraries/simcir-library.js"></script>
+    <script type="text/javascript" src="../Libraries/simcir-dso.js"></script>
+
 </body>
 </html>
