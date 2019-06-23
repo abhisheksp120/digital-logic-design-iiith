@@ -48,3 +48,5 @@ The right side consist of circuit board and Left side consists the input panel.
 	* You can connect only one line to an input, but an output can have multiple lines.
 
 	5. If your are facing issue creating the circuit please go through thoery section or try using the inbuild components to build the circuit.
+
+## [Project Documentation](https://gist.github.com/abhisheksp120/04b1ab1a3c36dd2bc947e5e22269b1a7)
