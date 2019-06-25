@@ -19,12 +19,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
    <script type="text/javascript" src="../Js.js"></script>
-
     <div class="row col-sm-9 simcir" id="cir">
-           
-     {
-            "width":2406,
-            "height":995,
+        </div>
+         <script type="text/javascript" >
+            var x=$(".simcir").width();
+  var y=x*1.36;
+var z=x*0.48;
+var counter={
+    
+            "width":y,
+            "height":z,
             "showToolbox":true,
             "toolbox":[
             {"type":"In"},
@@ -36,26 +40,18 @@
             {"type":"PushOn"},
             {"type":"PushOff"},
             {"type":"Toggle"},
-            {"type":"BUF"},
             {"type":"NOT"},       
             {"type":"AND"},
             {"type":"NAND"},
             {"type":"OR"},
-            {"type":"NOR"},
-            {"type":"XOR"},
-            {"type":"XNOR"},
             {"type":"4bitAdder"},
             {"type":"Parallel Shift Reg"},
             {"type":"DSO","numInputs":6},
             {"type":"Selector"},
-            {"type":"RS-FF"},
             {"type":"JK-FF"},
-            {"type":"T-FF"},
             {"type":"D-FF"},
-            {"type":"HalfAdder"},
             {"type":"FullAdder"}
-           
-  ],
+    ],
   "devices":[
     {"type":"In","id":"dev0","x":112,"y":24,"label":"J"},
     {"type":"Selector","id":"dev1","x":208,"y":32,"label":"Selector"},
@@ -175,7 +171,10 @@
     {"from":"dev53.in0","to":"dev12.out0"},
     {"from":"dev54.in0","to":"dev53.out0"}
   ]
- }
-        </div>
+  };
+var html1=JSON.stringify(counter);
+  document.querySelector(".simcir").innerHTML=html1;
+  
+        </script>
 </body>
 </html>

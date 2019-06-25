@@ -1,7 +1,7 @@
 #Bd{
-  background-image: url(Images/Bg.jpg);  
-   width: 99%;
-   height: 100%;
+  background-color: white;
+  width: 99%;
+  height: 100%;
 }
 #img{
   width: 80%;
@@ -25,9 +25,9 @@
   display: inline-block;
   border: solid 2px; 
   width: 67%; 
-  left: 8%; 
+  left: 6%; 
   border-radius: 5px; 
-  line-height: 200%;
+  line-height: 220%;
  
 }
 #div3{
@@ -35,15 +35,15 @@
   left: 15%; 
   margin-top: 5%;  
   height: 85%;
-  width: 85%; 
   border-radius: 5px; 
   position: absolute; 
-  overflow: auto;
+  overflow: auto; 
+  text-overflow: "----"; 
 }
 #div4{
   background-color: white;
   left: -15px;
-  width: 220%;
+
 }
 .button1{
   font-size: 15px;
@@ -136,17 +136,24 @@
   margin-top: 0px;
 }
 @media screen and (max-width: 780px) {
+  #img{
+    align-content: center;
+    width: 20%;
+  }
+  #div1{
+    width: 40%;
+  }
   #div2 {
     position: relative;
     margin-left: 20px;
     left: 200px;
     width: 50%;
-    height: 150px;
    
   }
   #div3{
+    display: inline-block;
     position: absolute;
-    left: -150px;
-    top: 350px;
+    
+    margin-top: 30%;
   }
 }
