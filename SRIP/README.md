@@ -37,16 +37,14 @@ The right side consist of circuit board and Left side consists the input panel.
 
 * Input panel -
 
-	1. Instruction button is the helping hand to simulate the experiment.
+	1. Clear button to clear the circuit board.
 
-	2. Clear button to clear the circuit board.
+	2. Load_it button loads the circuit which is selected from the dropdown.
 
-	3. Load_it button loads the circuit which is selected from the dropdown.
-
-	4. Click on the circle of the input or output to another input/output to make a connection.
+	3. Click on the circle of the input or output to another input/output to make a connection.
 
 	* You can connect only one line to an input, but an output can have multiple lines.
 
-	5. If your are facing issue creating the circuit please go through thoery section or try using the inbuild components to build the circuit.
+	4. If your are facing issue creating the circuit please go through thoery section or try using the inbuild components to build the circuit.
 
 ## [Project Documentation](https://gist.github.com/abhisheksp120/04b1ab1a3c36dd2bc947e5e22269b1a7)
