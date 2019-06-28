@@ -37,11 +37,11 @@ var counter={
 var html1=JSON.stringify(counter);
   document.querySelector(".simcir").innerHTML=html1;
   
-$(".simcir_outer_div").width(x*0.85);
+$(".simcir_outer_div").width(x*0.8);
 
    function change1(user){
    $(document).ready(function(){ 
-                $(".button3").click(function(){ 
+                $(".button1").click(function(){ 
                 if (user==="1") {
                 	 document.getElementById("div4").innerHTML='<object type="text/html" data="Circuits/Parallel Shift Reg.html" width="2800" height="1000" left="100"></object>';
                 }

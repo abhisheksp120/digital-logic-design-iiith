@@ -14,20 +14,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <div id="div"class="container-fluid">
-        <div class="row">
-          <div id="main" class="col-sm-2">
-             <img src="Images/logo.jpg" id="img" alt="img">
-              <div class="form-group">
-                   <div id="div1">
-                    <button type="button" class="button1" id="property" data-toggle="modal" data-target="#exampleModal">Instructions</button>
-                        <button type="button" onClick="hello4()" class="button2" id="property">Clear</button>
-                        <button type="button" id="property" class="button3">Load_it</button>
+          <div class="row col-sm-12" align="center">
+            <h1 style="margin-top: 1%; text-align: center;"><b>Multipliers</b></h1>
+          <p style="margin-top: 1%; text-align: center; font-size: 180%;"><b>Simulate a 4 bits multiplication<a data-toggle="modal" data-target="#exampleModal">(Click Here to see the instructions)</a></b></p>
+          <hr style="margin-top: 1%; border-width: 2px; ">
+       </div>
+          <div id="main" class="col-sm-2 ">
+                  <div id="div1">
+                    <h2 align="center"><b>Settings</b></h2>
+                    <hr>
+
+                        <button type="button" onClick="hello4()" class="button button3">Clear</button>
+                        <button type="button" class="button button1">Load_it</button>
                           <select id="sel" class="form-control" onchange="change();">
                                  <option disabled selected value>Select option</option>
                                   <option value="1">parallel_shift_reg</option>
                                   <option value="2">4_bit_adder</option>
                            </select>  
-                     </div> 
+ 
               </div>
           </div>  
     <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -55,7 +59,7 @@
         <hr>
           <p id="p1">
            <br>The right side consist of circuit board and Left side consists the input panel.</br>
-           <li>Circuit Board</li>
+           <li><b>Circuit Board</b></li>
            <ol>
              <li>
               <p>The toolbox on the left contains the pre-made logic circuits you will require to build a 4 bit multiplier.</p>
@@ -93,11 +97,8 @@
                   <p>The DSO displays the output in a graph format for easy verification. It has default 6 inputs.</p>
                 </li>
               </ol>
-              <li>Input panel</li>
+              <li><b>Input panel</b></li>
               <ol>
-                <li>
-                  <p>Instruction button is the helping hand to simulate the experiment.<p>
-                </li>
                 <li>
                   <p>Clear button to clear the circuit board.<p>
                   </li>
@@ -113,19 +114,16 @@
           </p>
       </div>
       <div class="modal-footer">
-        <button type="button" id="button4" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="button button2" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-        <div class="row col-sm-9" id="div2">
-          <p id="p2"><b>Perform multiplication with the help of shift register, 4 bit adder, quad 2 input And gate</b></p>
-        </div>
-        <div class=" simcir_outer_div" id="div3" >
+        <div class="simcir_outer_div" id="div3" >
           <div class=" simcir" id="div4" >
         </div>
       </div>    
-     </div>
+     
     </div>
     <script type="text/javascript" src="Js.js"></script>
     <script type="text/javascript" src="../Libraries/simcir.js"></script>
