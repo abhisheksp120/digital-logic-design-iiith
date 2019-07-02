@@ -1,3 +1,4 @@
+
 function refreshPage(){
     window.location.reload();
 } 
@@ -40,10 +41,23 @@ function refreshPage(){
                 //if seconds becomes zero, 
                 //then page alert time up 
                 if (mins < 0) { 
-                    alert('time up'); 
-                    minutes.value = 0; 
-                    seconds.value = 0; 
-                   displayNext(1);
+                    var temp =cl();
+                    var flag=cl1();
+                    if(flag==0){
+                        flag=1;
+                                if(temp===0){
+                                    alert('Time up'); 
+                                    minutes.value = 0; 
+                                    seconds.value = 0; 
+                                    displayNext(1);
+                    
+                                }else{
+                                        minutes.value = 0; 
+                                        seconds.value = 0; 
+                                         displayNext(1);
+                                     }
+                    }
+                    
                 } 
                 //if seconds > 0 then seconds is decremented 
                 else { 
